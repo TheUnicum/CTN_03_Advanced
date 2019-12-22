@@ -20,6 +20,7 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "Game.h"
+#include "Star.h"
 
 Game::Game( MainWindow& wnd )
 	:
@@ -46,27 +47,10 @@ void Game::ComposeFrame()
 	{
 		gfx.DrawLine({ 50.0f, 50.0f }, (Vec2)wnd.mouse.GetPos(), Colors::Yellow);
 	}
-    gfx.DrawClosedPolyline({ {10.0f,10.0f},{100.0f,10.0f},{10.0f,100.0f} }, Colors::Red);
+    gfx.DrawClosedPolyline(Star::Make(150.0f, 75.0f), Colors::Red);
 }
 
 /*
-(6:28) Plot a line from y = mx + b
-https://www.mathsisfun.com/data/straight_line_graph.html
-
-(31:07) Rasterization Rules
-https://docs.microsoft.com/en-us/windows/win32/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules
-(31:29) Bresenham's line algorithm
-https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
-
-T-Q1-Q4
-(9:14)
-https://www.desmos.com/calculator
-
-T-Q5-Q8
-(3:30)  m' = - 1 / m (perpendicular)
-
-T-Q9-Q12
-d = |Am+Bn+C| / sqrt(A^2 + B^2)
-https://www.intmath.com/plane-analytic-geometry/perpendicular-distance-point-line.php
-
+(5:18)
+Cohen–Sutherland algorithm
 */
