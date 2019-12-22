@@ -42,11 +42,18 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-    gfx.DrawLine({ 50.0f, 50.0f }, (Vec2)wnd.mouse.GetPos(), Colors::Yellow);
+	if (wnd.mouse.LeftIsPressed())
+	{
+		gfx.DrawLine({ 50.0f, 50.0f }, (Vec2)wnd.mouse.GetPos(), Colors::Yellow);
+	}
 }
 
 /*
 (6:28) Plot a line from y = mx + b
 https://www.mathsisfun.com/data/straight_line_graph.html
 
+(31:07) Rasterization Rules
+https://docs.microsoft.com/en-us/windows/win32/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules
+(31:29) Bresenham's line algorithm
+https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
 */
