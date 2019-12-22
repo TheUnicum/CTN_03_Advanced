@@ -47,7 +47,13 @@ void Game::ComposeFrame()
 	{
 		gfx.DrawLine({ 50.0f, 50.0f }, (Vec2)wnd.mouse.GetPos(), Colors::Yellow);
 	}
-    gfx.DrawClosedPolyline(Star::Make(150.0f, 75.0f), Colors::Red);
+
+	auto poly = Star::Make(150.0f, 75.0f, 8);
+	for (auto& v : poly)
+	{
+		v += Vec2{ 200.0f, 200.f };
+	}
+	gfx.DrawClosedPolyline(poly, Colors::Red);
 }
 
 /*
