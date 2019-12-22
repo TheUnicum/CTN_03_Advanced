@@ -42,12 +42,7 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-	// y = 0.4x + 200
-	for (int x = 0; x < Graphics::ScreenWidth; x++)
-	{
-		const float y = 0.4f * (float)x + 200.f;
-		gfx.PutPixel(x, int(y), Colors::White);
-	}
+    gfx.DrawLine({ 50.0f, 50.0f }, { 500.0f, 100.0f }, Colors::Cyan);
 }
 
 /*
