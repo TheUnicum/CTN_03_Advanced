@@ -42,4 +42,16 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+	// y = 0.4x + 200
+	for (int x = 0; x < Graphics::ScreenWidth; x++)
+	{
+		const float y = 0.4f * (float)x + 200.f;
+		gfx.PutPixel(x, int(y), Colors::White);
+	}
 }
+
+/*
+(6:28) Plot a line from y = mx + b
+https://www.mathsisfun.com/data/straight_line_graph.html
+
+*/
