@@ -56,4 +56,16 @@ https://www.mathsisfun.com/data/straight_line_graph.html
 https://docs.microsoft.com/en-us/windows/win32/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage-rules
 (31:29) Bresenham's line algorithm
 https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
+
+T-Q1-Q4
+(9:14)
+https://www.desmos.com/calculator
+
+T-Q5-Q8
+(3:30)  m' = - 1 / m (perpendicular)
+
+T-Q9-Q12
+d = |Am+Bn+C| / sqrt(A^2 + B^2)
+https://www.intmath.com/plane-analytic-geometry/perpendicular-distance-point-line.php
+
 */
