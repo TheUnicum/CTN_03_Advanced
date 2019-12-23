@@ -2,6 +2,7 @@
 #include <vector>
 #include "Vec2.h"
 #include "Graphics.h"
+#include "Drawalble.h"
 
 class CoordinateTransformer
 {
@@ -10,15 +11,12 @@ public:
 		:
 		gfx(gfx)
 	{}
-	void DrawClosedPolyline(std::vector<Vec2> poly, Color c)
+	void Draw(Drawable& drawable) const
 	{
-		Vec2 offset = { float(Graphics::ScreenHeight / 2), float(Graphics::ScreenHeight / 2) };
-		for (auto& v : poly)
-		{
-			v.y *= -1;	// FLIP the y axis direction
-			v += offset;
-		}
-		gfx.DrawClosedPolyline(poly, c);
+		const Vec2 offset = { float(Graphics::ScreenHeight / 2), float(Graphics::ScreenHeight / 2) };
+		drawable.ScaleIndipendent(1.0f, -1.0f);
+		drawable.Translate(offset);
+		drawable.Render(gfx);
 	}
 private:
 	Graphics& gfx;
