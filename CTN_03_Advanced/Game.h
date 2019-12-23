@@ -24,6 +24,8 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "CoordinateTransformer.h"
+#include "Entity.h"
+#include "Star.h"
 
 class Game
 {
@@ -43,6 +45,7 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
-    CoordinateTransformer ct;
+	CoordinateTransformer ct;
+	Entity e1 = Star::Make(200.0f, 80.0f, 7);
 	/********************************/
 };
