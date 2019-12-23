@@ -42,7 +42,7 @@ public:
 	}
 	T		LenSq() const
 	{
-		return sq( *this );
+		return x * x + y * y; //return sq( *this );
 	}
 	T		Len() const
 	{
