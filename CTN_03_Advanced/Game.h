@@ -50,31 +50,42 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
-    // world generation paramiters
-    static constexpr float worldWidth = 10000.0f;
-    static constexpr float worldHeight = 6000.0f;
-    static constexpr int nStars = 500;
-    static constexpr float meanStarRadius = 160.0f;
-    static constexpr float devStarRadius = 90.0f;
-    static constexpr float minStarRadius = 40.0f;
-    static constexpr float maxStarRadius = 300.0f;
-    static constexpr float meanInnerRatio = 0.4f;
-    static constexpr float devInnerRatio = 0.25f;
-    static constexpr float minInnerRatio = 0.15f;
-    static constexpr float maxInnerRatio = 0.8f;
-    static constexpr float meanFlares = 6.5f;
-    static constexpr float devFlares = 2.0f;
-    static constexpr int minFlares = 3;
-    static constexpr int maxFlares = 10;
-    static constexpr float meanColorFreq = 1.8f;
-    static constexpr float devColorFreq = 1.0f;
-    static constexpr float minColorFreq = 0.6f;
-    static constexpr float maxColorFreq = 4.0f;
-    // game object
-    FrameTimer ft;
+
+	// world generation paramiters
+	static constexpr float worldWidth = 10000.0f;
+	static constexpr float worldHeight = 6000.0f;
+	static constexpr int nStars = 500;
+	static constexpr float meanStarRadius = 160.0f;
+	static constexpr float devStarRadius = 90.0f;
+	static constexpr float minStarRadius = 40.0f;
+	static constexpr float maxStarRadius = 300.0f;
+	static constexpr float meanInnerRatio = 0.4f;
+	static constexpr float devInnerRatio = 0.25f;
+	static constexpr float minInnerRatio = 0.15f;
+	static constexpr float maxInnerRatio = 0.8f;
+	static constexpr float meanFlares = 6.5f;
+	static constexpr float devFlares = 2.0f;
+	static constexpr int minFlares = 3;
+	static constexpr int maxFlares = 10;
+	static constexpr float meanColorFreq = 1.8f;
+	static constexpr float devColorFreq = 1.0f;
+	static constexpr float minColorFreq = 0.6f;
+	static constexpr float maxColorFreq = 4.0f;
+
+	static constexpr float meanRadiusAmplitude = 0.5f;
+	static constexpr float devRadiusAmplitude = 0.3f;
+	static constexpr float minRadiusAmplitude = 0.1f;
+	static constexpr float maxRadiusAmplitude = 0.9f;
+	static constexpr float meanRadiusFreq = 1.8f;
+	static constexpr float devRadiusFreq = 1.0f;
+	static constexpr float minRadiusFreq = 0.6f;
+	static constexpr float maxRadiusFreq = 4.0f;
+
+	// game object
+	FrameTimer ft;
 	CoordinateTransformer ct;
 	Camera cam;
-    MouseCameraController camCtrl;
+	MouseCameraController camCtrl;
 	std::vector<StarBro> stars;
 	/********************************/
 };
