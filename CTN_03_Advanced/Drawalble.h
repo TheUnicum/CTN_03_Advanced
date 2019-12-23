@@ -22,7 +22,7 @@ public:
 		scale_y *= scale_in;
 		translation *= scale_in;
 	}
-	void ScaleIndipendent(float scale_in_x, float scale_in_y)
+	void ScaleIndependent(float scale_in_x, float scale_in_y)
 	{
 		scale_x *= scale_in_x;
 		scale_y *= scale_in_y;
