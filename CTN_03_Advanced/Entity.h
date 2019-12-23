@@ -6,9 +6,10 @@
 class Entity
 {
 public:
-	Entity(std::vector<Vec2> model)
+	Entity(std::vector<Vec2> model, const Vec2& pos = { 0.0f, 0.0f })
 		:
-		model(model)
+		pos(pos),
+		model(std::move(model))
 	{}
 	const Vec2& GetPos() const
 	{
