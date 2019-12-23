@@ -36,7 +36,8 @@ public:
 		if (engaged)
 		{
 			const auto curPos = (Vec2)mouse.GetPos();
-			const auto delta = curPos - lastPos;
+			auto delta = curPos - lastPos;
+			delta.x = -delta.x;
 			cam.MoveBy(delta);
 			lastPos = curPos;
 		}
