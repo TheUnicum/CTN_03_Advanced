@@ -38,7 +38,7 @@ public:
 			const auto curPos = (Vec2)mouse.GetPos();
 			auto delta = curPos - lastPos;
 			delta.x = -delta.x;
-			cam.MoveBy(delta);
+			cam.MoveBy(delta / cam.GetScale());
 			lastPos = curPos;
 		}
 	}
