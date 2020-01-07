@@ -48,7 +48,8 @@ public:
 		{
 			const auto curPos = (Vec2)mouse.GetPos();
 			auto delta = curPos - lastPos;
-			delta.x = -delta.x;
+			delta.x = -delta.x; // fixes the disconnect between screen coords and math coords
+			delta.Rotate(-cam.GetAngle()); // up down etc. depends on rotation of the camera
 			cam.MoveBy(delta / cam.GetScale());
 			lastPos = curPos;
 		}
