@@ -29,8 +29,8 @@ Game::Game(MainWindow& wnd)
 	ct(gfx),
 	cam(ct),
 	camCtrl(wnd.mouse, cam),
-    plank({ 100.0f,200.0f }, -380.0f, -100.0f, 290.0f),
-    ball({ 0.0f,-200.0f }, 15.0f, { -8.0f,32.0f })
+	plank({ 100.0f,200.0f }, -380.0f, -100.0f, 290.0f),
+	spawn(balls, 15.0f, { 0.0f,-250.0f }, -100.0f, 25.0f, 150.0f, 0.4f)
 {
 }
 
@@ -45,20 +45,28 @@ void Game::Go()
 void Game::UpdateModel()
 {
 	const float dt = ft.Mark();
-    ball.Update(dt);
+	for (auto& ball : balls)
+	{
+		ball.Update(dt);
+	}
+	spawn.Update(dt);
+
 	camCtrl.Update();
-    if (wnd.kbd.KeyIsPressed(VK_DOWN))
-    {
-        plank.MoveFreeY(-2.0f);
-    }
-    if (wnd.kbd.KeyIsPressed(VK_UP))
-    {
-        plank.MoveFreeY(2.0f);
-    }
+	if (wnd.kbd.KeyIsPressed(VK_DOWN))
+	{
+		plank.MoveFreeY(-2.0f);
+	}
+	if (wnd.kbd.KeyIsPressed(VK_UP))
+	{
+		plank.MoveFreeY(2.0f);
+	}
 }
 
 void Game::ComposeFrame()
 {
-    cam.Draw(plank.GetDrawable());
-    cam.Draw(ball.GetDrawable());
+	cam.Draw(plank.GetDrawable());
+	for (const auto& ball : balls)
+	{
+		cam.Draw(ball.GetDrawable());
+	}
 }
