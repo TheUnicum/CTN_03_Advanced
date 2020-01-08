@@ -89,24 +89,12 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-	//const auto vp = cam.GetViewport();
-	//for (const auto& star: stars)
-	//{
-	//	if (star.GetBoundingRect().IsOverlappingWith(vp))
-	//	{
-	//		cam.Draw(star.GetDrawable());
-	//	}
-	//}
-	auto star = Star::Make(100.0f, 50.0f);
-	const auto tform = Mat3::Rotation(0.3f);
-	const auto tform2 = Mat3::Scale(2.0f);
-	const auto tform3 = Mat3::FlipY();
-	const auto tform4 = Mat3::Translation(100.0f, 100.0f);
-	const auto tformcat = tform4 * tform3* tform2* tform;
-	for (auto& v : star)
+	const auto vp = cam.GetViewport();
+	for (const auto& star: stars)
 	{
-		auto v3 = (Vec3)v;
-		v = Vec2(tformcat * v3);
+		if (star.GetBoundingRect().IsOverlappingWith(vp))
+		{
+			cam.Draw(star.GetDrawable());
+		}
 	}
-	cam.Draw(Drawable(star, Colors::Green));
 }
